@@ -1,10 +1,7 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'r  useEffect(() => {
-    const savedMessages = localStorage.getItem('pnguinx-chat');
-    if (savedMessages) {
-      setMessages(JSON.parse(savedMessages));
-    } else {import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Send, Home } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
