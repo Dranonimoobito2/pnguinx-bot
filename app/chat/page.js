@@ -1,7 +1,10 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useRef } from 'r  useEffect(() => {
+    const savedMessages = localStorage.getItem('pnguinx-chat');
+    if (savedMessages) {
+      setMessages(JSON.parse(savedMessages));
+    } else {import { motion, AnimatePresence } from 'framer-motion';
 import { Send, Home } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -49,6 +52,7 @@ export default function Chat() {
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef(null);
+  const inputRef = useRef(null);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -58,13 +62,11 @@ export default function Chat() {
     scrollToBottom();
   }, [messages, isTyping]);
 
-  // Load chat history from localStorage
   useEffect(() => {
     const savedMessages = localStorage.getItem('pnguinx-chat');
     if (savedMessages) {
       setMessages(JSON.parse(savedMessages));
     } else {
-      // Welcome message
       setTimeout(() => {
         setMessages([{
           id: Date.now(),
@@ -76,7 +78,6 @@ export default function Chat() {
     }
   }, []);
 
-  // Save to localStorage whenever messages change
   useEffect(() => {
     if (messages.length > 0) {
       localStorage.setItem('pnguinx-chat', JSON.stringify(messages));
@@ -86,17 +87,13 @@ export default function Chat() {
   const generatePenguinReply = (userMessage) => {
     const lowerMessage = userMessage.toLowerCase();
     
-    // Easter egg for fish
     if (lowerMessage.includes('fish')) {
       return fishResponse;
     }
     
-    // Random chance for ASCII art (8% chance)
     if (Math.random() < 0.08) {
       return asciiPenguin;
     }
-    
-    // Regular penguin noise
     return penguinNoises[Math.floor(Math.random() * penguinNoises.length)];
   };
 
@@ -115,7 +112,6 @@ export default function Chat() {
     setInputValue('');
     setIsTyping(true);
 
-    // Simulate penguin thinking time (1-2.5 seconds)
     const thinkingTime = Math.random() * 1500 + 1000;
     
     setTimeout(() => {
@@ -127,6 +123,7 @@ export default function Chat() {
         timestamp: new Date().toISOString()
       };
       setMessages(prev => [...prev, penguinReply]);
+      inputRef.current?.focus();
     }, thinkingTime);
   };
 
@@ -145,7 +142,6 @@ export default function Chat() {
 
   return (
     <div className="min-h-screen bg-slate-900 p-4">
-      {/* Header */}
       <header className="max-w-2xl mx-auto mb-6 flex justify-between items-center">
         <div className="flex items-center gap-3">
           <Link href="/">
@@ -171,7 +167,6 @@ export default function Chat() {
         </div>
       </header>
 
-      {/* Chat Container */}
       <main className="max-w-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -179,7 +174,6 @@ export default function Chat() {
           transition={{ duration: 0.6 }}
           className="h-[calc(100vh-120px)] max-h-[800px] w-full max-w-4xl bg-slate-800/50 backdrop-blur-xl rounded-3xl border border-slate-700/50 flex flex-col overflow-hidden"
         >
-          {/* Messages Area */}
           <div className="flex-1 overflow-y-auto p-6 space-y-6">
             <AnimatePresence>
               {messages.map((message) => (
@@ -201,10 +195,10 @@ export default function Chat() {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Input Area */}
           <div className="p-6 border-t border-slate-700/50">
             <form onSubmit={handleSendMessage} className="flex gap-3">
               <Input
+                ref={inputRef}
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder="say something..."
